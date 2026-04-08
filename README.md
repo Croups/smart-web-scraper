@@ -6,6 +6,7 @@ An AI-powered web scraping agent built with [Pydantic AI](https://ai.pydantic.de
 
 ## DEMO
 https://github.com/user-attachments/assets/fa1d5af5-f2a4-4aa2-af92-f3a3a849d97e
+
 ---
 
 ## What it does
