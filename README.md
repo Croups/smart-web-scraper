@@ -6,7 +6,11 @@ An AI-powered web scraping agent built with [Pydantic AI](https://ai.pydantic.de
 
 ## DEMO
 
-> 📹 _Video coming soon_
+
+https://github.com/user-attachments/assets/2094ec96-b187-4114-bee0-bfd4eb1a4345
+
+
+
 
 ---
 
@@ -85,4 +89,3 @@ The agent will return a list of objects matching that schema — one item if onl
 - [Massive Unblocker](https://docs.joinmassive.com/unblocker/browser) — browser-grade scraping API
 - [Streamlit](https://streamlit.io/) — UI
 - [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/) — HTML cleaning
-- OpenAI `gpt-4o-mini` — LLM
