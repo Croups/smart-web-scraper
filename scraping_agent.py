@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-# --- Deps ---
+# ------------ Deps ------------
 
 @dataclass
 class ScraperDeps:
@@ -22,7 +22,7 @@ class ScraperDeps:
     raw_content: list[str] = field(default_factory=list)
 
 
-# --- Output types ---
+#------------ Output ------------
 
 class ScrapedResult(BaseModel):
     url: str
@@ -37,7 +37,7 @@ class ScrapedResultWithCustomOutput(BaseModel):
     custom_output: list[dict[str, Any]]
 
 
-# --- Agent factory ---
+# ------------ Agent ------------
 
 def _build_agent(use_custom_output: bool) -> Agent:
     output_type = ScrapedResultWithCustomOutput if use_custom_output else ScrapedResult
@@ -51,7 +51,7 @@ def _build_agent(use_custom_output: bool) -> Agent:
     )
 
     return Agent(
-        "openai:gpt-4o-mini",
+        "openai:gpt-5.3-mini",
         deps_type=ScraperDeps,
         output_type=output_type,
         instructions=base_instructions,
@@ -62,7 +62,7 @@ _agent = _build_agent(use_custom_output=False)
 _agent_custom = _build_agent(use_custom_output=True)
 
 
-# --- Tool (registered on both agents) ---
+# ------------ Tool------------
 
 def _scrape_tool(ctx: RunContext[ScraperDeps]) -> str:
     """Fetch the target URL using the Massive Unblocker API and return page content."""
@@ -85,8 +85,6 @@ def _scrape_tool(ctx: RunContext[ScraperDeps]) -> str:
 _agent.tool(_scrape_tool)
 _agent_custom.tool(_scrape_tool)
 
-
-# --- Run helper ---
 
 def run_scrape(
     url: str,
