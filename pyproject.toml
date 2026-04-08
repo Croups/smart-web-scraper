@@ -1,0 +1,15 @@
+[project]
+name = "scraper-agent-clawpod"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4>=4.14.3",
+    "openai>=2.30.0",
+    "pydantic>=2.12.5",
+    "pydantic-ai>=1.77.0",
+    "python-dotenv>=1.2.2",
+    "requests>=2.33.0",
+    "streamlit>=1.56.0",
+]
